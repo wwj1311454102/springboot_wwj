@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="./js/jquery-2.1.1.js"></script>
+</head>
+<body>
+<form action="saveUser" method="post">
+    用户名：<input id="userName" name="userName" type="text" size="20" placeholder="提示信息"/>
+    <br/>
+    密码:<input id="passWord" name="passWord" type="password" size="20"/><br/>
+
+    性别:
+    <!--如果多个单选框要组合在一起形成一个选项，则应该要报他们的name属性设置为一致的。-->
+    <input type="radio" value="男" name="sex" checked/>男
+    <input type="radio" value="女" name="sex"/>女
+    <br/>
+    上传照片:<input type="file"/>
+    <br/>
+    <input type="submit" value="提交"/>
+    <input type="reset" value="重置"/>
+
+    <input id="btn" type="button" value="普通按钮提交"/>
+    保存结果
+    <div id="text1">
+        2323
+
+    </div>
+</form>
+</body>
+</html>
+<script>
+    // $.ajax("saveUser");
+    $("#btn").click(function () {
+        var param = {};
+        param.userName = $("#userName").val();
+        param.passWord = $("#passWord").val();
+        param.sex = $("input[name='sex']:checked").val();
+
+        $.ajax({
+            type: "POST",
+            url: "saveUser",
+            data: param,
+            dataType: "json",
+            success: function (data) {
+                console.log(data);
+                $('#text1').html(data.infoMessage);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                $('#text1').html(XMLHttpRequest + "---" + textStatus + "---" + errorThrown);
+            }
+        });
+    })
+</script>
