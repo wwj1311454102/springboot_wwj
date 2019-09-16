@@ -39,6 +39,7 @@ public class HelloController {
             String key = (String) headerNames.nextElement();
             String value = request.getHeader(key);
             map.put(key, value);
+
         }
         System.out.println(map.toString());
         String name = request.getHeader("name");
