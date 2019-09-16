@@ -26,7 +26,7 @@ public class TestRedis {
         stringRedisTemplate.opsForValue().set("aaa", "111");
         Assert.assertEquals("111", stringRedisTemplate.opsForValue().get("aaa"));
 
-        
+
     }
 
     @Test
