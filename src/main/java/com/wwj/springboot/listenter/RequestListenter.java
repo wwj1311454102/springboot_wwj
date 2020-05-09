@@ -48,7 +48,7 @@ import javax.servlet.annotation.WebListener;
 public class RequestListenter implements ServletRequestListener {
     @Override
     public void requestDestroyed(ServletRequestEvent servletRequestEvent) {
-
+//        servletRequestEvent.
         System.out.println("---------------------------->请求销毁");
     }
 

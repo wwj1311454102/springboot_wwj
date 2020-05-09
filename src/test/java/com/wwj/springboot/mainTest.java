@@ -10,6 +10,11 @@
  */
 package com.wwj.springboot;
 
+import com.alibaba.fastjson.JSON;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * 〈描述〉<br>
  * 〈〉
@@ -20,7 +25,11 @@ package com.wwj.springboot;
  */
 public class mainTest {
     public static void main(String[] args) {
-        System.out.println(11111);
+        Map map = new HashMap();
+        map.put("page_size","10");
+        map.put("page_index","1");
+        String  param= JSON.toJSONString(map);
+        System.out.println(param);
 
     }
 }

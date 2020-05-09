@@ -42,7 +42,6 @@ public class MybatisTest {
         userMapper.insert(new User("wwj1", "a123456", "man"));
         userMapper.insert(new User("wwj2", "b123456", "man"));
         userMapper.insert(new User("wwj3", "b123456", "man"));
-
         Assert.assertEquals(3, userMapper.getAll().size());
     }
 

@@ -10,6 +10,10 @@
  */
 package com.wwj.springboot.service;
 
+import com.wwj.springboot.service.impl.Aodi;
+import com.wwj.springboot.service.impl.Bmw;
+import org.springframework.context.annotation.Bean;
+
 /**
  * 〈描述〉<br>
  * 〈〉
@@ -19,11 +23,14 @@ package com.wwj.springboot.service;
  * @since 1.0.0
  */
 //@Configuration
-/*
 public class CarConfig {
     @Bean
     public Bmw bmw(){
         return  new Bmw();
     }
+
+    @Bean
+    public Aodi aodi(){
+        return  new Aodi();
+    }
 }
-*/

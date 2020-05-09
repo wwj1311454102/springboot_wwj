@@ -14,9 +14,11 @@ import com.wwj.springboot.mapper.UserMapper;
 import com.wwj.springboot.model.User;
 import com.wwj.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -27,7 +29,8 @@ import java.util.List;
  * @create 2019/6/11
  * @since 1.0.0
  */
-@Service()
+@Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -36,6 +39,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> getAllUser() {
         List<User> user = userMapper.getAll();
+        new HashMap<>();
         return user;
     }
 
@@ -50,5 +54,13 @@ public class UserServiceImpl implements UserService {
     public int deleteUser(long id) {
         int i = userMapper.delete(id);
         return i;
+    }
+
+    @Override
+    @Cacheable(value="users")
+    public User selectUserById(long id) {
+        System.out.println("无ehchche 缓存时调用");
+        User user=userMapper.getOne(id);
+        return user;
     }
 }

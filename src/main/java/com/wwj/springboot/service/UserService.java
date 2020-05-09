@@ -30,4 +30,7 @@ public interface UserService {
     public int saveUser(User user);
 
     public int deleteUser(long id);
+
+    public User selectUserById(long id);
+
 }

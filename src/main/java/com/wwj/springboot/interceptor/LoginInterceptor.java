@@ -40,7 +40,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 //       List<String> uri= getUrl();
         HttpSession session = request.getSession();
         String url1 = request.getRequestURI();
-
+//    request.getRequestDispatcher().forward();
 //        if(uri.contains(url1)){
 //            return  true;
 //        }

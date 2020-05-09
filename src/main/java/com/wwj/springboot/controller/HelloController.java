@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.mail.Address;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -34,6 +35,8 @@ public class HelloController {
     @RequestMapping("/hello")
     public String hello() {
         Map<String, String> map = new HashMap<String, String>();
+        boolean a;
+        int b ;
         Enumeration headerNames = request.getHeaderNames();
         while (headerNames.hasMoreElements()) {
             String key = (String) headerNames.nextElement();
@@ -45,7 +48,7 @@ public class HelloController {
         String name = request.getHeader("name");
         System.out.println(name);
         return student.getName() + student.getPower() + userProperties.getTitle();
-//        return request.getHeader("name");
+//        return r    equest.getHeader("name");
 
     }
 }
