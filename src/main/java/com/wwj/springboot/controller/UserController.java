@@ -59,7 +59,7 @@ public class UserController {
 
 
     @RequestMapping("/getUser1")
-    @Cacheable(value = "user-key")
+    @Cacheable(value = "users")
     @ResponseBody
     public User getUser1() {
         User user = new User("aa", "aa@126.com", "aa123456", "aa", "123");

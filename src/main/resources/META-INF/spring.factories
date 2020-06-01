@@ -1,0 +1,16 @@
+org.springframework.context.ApplicationContextInitializer=\
+  com.wwj.springboot.springbootconfig.MyApplicationContextInitializer
+
+
+
+org.springframework.context.ApplicationListener=\
+  com.wwj.springboot.springbootconfig.MyApplicationListener
+
+
+org.springframework.boot.SpringApplicationRunListener=\
+    com.wwj.springboot.springbootconfig.MySpringApplicationRunListener
+
+
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    com.wwj.springboot.customStart.CustomAutoConfiguration

@@ -8,17 +8,16 @@
  * <author>          <time>          <version>          <desc>
  * 作者姓名           修改时间           版本号              描述
  */
-package com.wwj.springboot.controller;
+package com.wwj.errorpack;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.wwj.springboot.vo.ResultVo;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
@@ -36,25 +35,20 @@ import java.util.Map;
  * @since 1.0.0
  */
 @RestController
-@RequestMapping("http")
-public class HttpController {
-
-
-    @ModelAttribute
-    public void populateModel(@RequestParam String abc, ModelMap model) {
-        model.addAttribute("mab", abc);
-    }
+@RequestMapping("httpRe")
+public class HttpReController {
 
     @RequestMapping("/test1")
-    public Object testHttp1(@ModelAttribute("mab") String mab, Map inputData) {
+    public Object testHttp1(Map inputData) {
         ResultVo vo = new ResultVo();
         String code = (String) inputData.get("id");
         vo.setCode(code);
         vo.setMessage("test1");
-//        vo.setData(inputData);
-        System.out.println(mab);
+        vo.setData(inputData);
+        ModelMap model= new ModelMap();
+        model.addAttribute(vo);
 //        JSONObject jo= JSONObject.dsdsdsd
-        return vo;
+        return model;
 //       return  null;
     }
 

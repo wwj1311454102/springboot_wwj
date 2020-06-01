@@ -22,8 +22,8 @@ import org.springframework.context.annotation.Import;
  * @create 2019/6/10
  * @since 1.0.0
  */
-@Configuration
-@Import({CarConfig.class,CarConfigB.class})
+//@Configuration
+//@Import({CarConfig.class,CarConfigB.class})
 //添加自动扫描注解，basePackages为TestBean包路径
 //@ComponentScan(basePackages = "com.wwj.springboot.service")
 public class ParentConfig {

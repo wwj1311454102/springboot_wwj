@@ -26,7 +26,7 @@ import org.springframework.stereotype.Component;
 public class Student {
     // @Value("${student.name}")
     private String name;
-    //@Value("${student.power}")
+//    @Value("${student.power}")
     private String power;
 
     public Student() {

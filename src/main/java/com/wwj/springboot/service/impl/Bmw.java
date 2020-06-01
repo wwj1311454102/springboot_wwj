@@ -13,6 +13,8 @@ package com.wwj.springboot.service.impl;
 import com.wwj.springboot.service.Car;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+
 /**
  * 〈描述〉<br>
  * 〈〉
@@ -23,6 +25,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Bmw implements Car {
+
+    @PostConstruct
+    private void init(){
+        System.out.println("PostConstruct 注解 初始化数据. 宝马");
+    }
 
     @Override
     public void print() {

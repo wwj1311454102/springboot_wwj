@@ -22,5 +22,9 @@ public class testConfig {
     	AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(ParentConfig.class);
     	 Car car =  (Car) context.getBean("aodi");
     	car.print();
+
+		/*Reflections reflections = new Reflections("test.reflection");
+		Set<Class<? extends Base>> subTypes = reflections.getSubTypesOf(Base.class);
+		subTypes.forEach(x -> System.out.println(x));*/
     	}
 }
