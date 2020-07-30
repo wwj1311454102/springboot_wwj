@@ -10,11 +10,13 @@
  */
 package com.wwj.springboot.springbootconfig;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 
 /**
- * 〈描述〉<br> 
+ * 〈描述〉<br>
  * 〈自定义ApplicationContextInitializer〉
  *
  * @author WUWJ
@@ -22,9 +24,11 @@ import org.springframework.context.ConfigurableApplicationContext;
  * @since 1.0.0
  */
 public class MyApplicationContextInitializer implements ApplicationContextInitializer {
+    private static final Logger LOG = LoggerFactory.getLogger(MyApplicationContextInitializer.class);
 
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
-        System.out.println("------------自定义ApplicationContextInitializer------------");
+        LOG.info("------------自定义ApplicationContextInitializer------------");
+//        applicationContext.getBean("Aodi");
     }
 }

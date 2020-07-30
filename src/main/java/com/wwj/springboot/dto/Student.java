@@ -28,6 +28,18 @@ public class Student {
     private String name;
 //    @Value("${student.power}")
     private String power;
+    private  Teacher teacher;
+
+    private  void  doSomething(){
+        System.out.println(1111);
+    }
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
 
     public Student() {
     }

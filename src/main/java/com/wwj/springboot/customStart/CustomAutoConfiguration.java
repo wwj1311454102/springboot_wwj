@@ -39,6 +39,7 @@ public class CustomAutoConfiguration
         StudentService helloService = new StudentService();
         helloService.setName(student.getName());//
         helloService.setPower(student.getPower());//
+        System.out.println(student.getName()+student.getPower());
         return helloService;
     }
 }

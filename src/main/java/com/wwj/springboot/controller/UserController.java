@@ -17,6 +17,8 @@ import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Ehcache;
 import net.sf.ehcache.Element;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
@@ -41,6 +43,8 @@ import java.util.*;
 @Controller
 @RequestMapping("/user")
 public class UserController {
+    private static final Logger LOG = LoggerFactory.getLogger(UserController.class);
+
     @Autowired
     UserServiceImpl userService;
 
@@ -52,7 +56,6 @@ public class UserController {
 
     @RequestMapping("/getUser")
     public String getUser() {
-
         return "userinfo";
 
     }
