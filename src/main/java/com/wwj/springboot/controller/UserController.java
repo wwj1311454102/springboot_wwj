@@ -29,6 +29,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.*;
 
@@ -102,6 +103,15 @@ public class UserController {
         }
         session.setAttribute("uid", uid);
         return session.getId();
+    }
+
+    /*
+     * 和验证码接口一起校验 分布式session
+     * */
+    @RequestMapping("/getCode")
+    @ResponseBody
+    String getCode(HttpServletRequest request) {
+        return (String) request.getSession().getAttribute("simpleCaptcha");
     }
 
 
